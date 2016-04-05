@@ -1,0 +1,47 @@
+swagger: '2.0'
+info:
+  title: 顺道儿 API
+  description: 顺道儿 API
+  version: "1.0.0"
+# the domain of the service
+host: api.shundaoer.top
+# array of all schemes that your API supports
+schemes:
+  - http
+# will be prefixed to all paths
+basePath: /v1
+produces:
+  - application/json
+paths:
+  /customers:
+    post:
+      summary: 注册一个Customer
+      description: 注册客户(Customer)
+      parameters:
+        - name: customer
+          in: body
+          description: 新注册的customer的信息
+          schema:
+            $ref: '#/definitions/Customer'
+          required: true
+      tags:
+        - Customer
+      responses:
+        200:
+          description: ''
+definitions:
+  Customer:
+    type: object
+    properties:
+      name:
+        type: string
+        description: Customer设置的用户名(收货人名称)
+      mail:
+        type: string
+        description: Customer的邮箱(必须为校园邮箱)
+      phone:
+        type: string
+        description: Customer的手机号码.
+      password:
+        type: string
+        description: Customer设置的密码.
