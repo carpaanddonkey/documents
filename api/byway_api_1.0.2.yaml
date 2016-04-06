@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   title: 顺道儿 API
   description: 顺道儿 API
-  version: "1.0.1"
+  version: "1.0.2"
 # the domain of the service
 host: api.shundaoer.top
 # array of all schemes that your API supports
@@ -62,5 +62,4 @@ definitions:
         format: int32
       message:
         type: string
-      fields:
-        type: string
+    
