@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   title: 顺道儿 API
   description: 顺道儿 API
-  version: "1.0.2"
+  version: "1.0.3"
 # the domain of the service
 host: api.shundaoer.top
 # array of all schemes that your API supports
@@ -30,7 +30,14 @@ paths:
         201:
           description: 用户注册（创建）成功
           schema:
-            $ref: '#/definitions/Customer'
+            type: object
+            properties:
+              status: 
+                type: integer
+              msg: 
+                type: string
+              href: 
+                type: string
         default:
           description: 用户注册失败
           schema:
@@ -57,9 +64,9 @@ definitions:
   Error:
     type: object
     properties:
-      code:
+      status:
         type: integer
         format: int32
-      message:
+      msg:
         type: string
     
